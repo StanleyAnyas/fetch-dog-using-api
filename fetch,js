@@ -1,0 +1,13 @@
+const dogImage = document.getElementById("dogImage")
+const newimage = document.getElementById("get-new")
+const getNewDod = () =>{
+    fetch("https://dog.ceo/api/breeds/image/random")
+    .then(Response => Response.json())
+    .then (json =>{
+        newimage.innerHTML = `<img src="${json.massage}" width = 200 height = 200 />`
+    })
+}
+
+newimage.addEventListener("click", () => {
+    getNewDod()
+})
